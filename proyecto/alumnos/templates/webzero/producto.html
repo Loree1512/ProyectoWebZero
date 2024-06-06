@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Obras de Arte</title>
+  {%load static%}
+  <link rel="stylesheet" type = "text/css" href="{% static 'css/style.css' %}">
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <script src="{% static 'js/miau.js' %}"></script>
+  <style>
+
+ 
+    .popover {
+    position: relative;
+    display: inline-block;
+    }
+    
+    .popover-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    }
+    
+    .popover:hover .popover-content {
+    display: block;
+    }
+    
+    
+
+
+    .navbar {
+      background-color: #6a0dad;
+    }
+
+    .navbar-brand {
+      color: white;
+    }
+
+    .dropdown-menu {
+      background-color: white;
+    }
+
+    .product-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .product-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #404040;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .product-info {
+      font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .action-button {
+      margin-top: 20px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .container-main {
+      background-color: #f8f9fa;
+      padding: 50px 0;
+    }
+
+    .title {
+      color: #404040;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .cart-button a {
+      color: #fff;
+      background-color: #6a0dad;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+    }
+
+    .cart-button a:hover {
+      background-color: #491d7c;
+    }
+
+    .search-bar {
+      width: 400px;
+      margin-right: 20px;
+    }
+  </style>
+</head>
+<body style="background-color: #e4e2dd;">
+
+  <div id = "miNavbar"></div>  
+
+  <div class="container-fluid container-main" style="background-color: #fff;">
+    <h1 class="title">Detalles del Producto</h1>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="product-card">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/300px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" alt="La Mona Lisa" class="product-image">
+            </div>
+            <div class="col-md-6">
+              <div class="product-info">
+                <h2>La Mona Lisa</h2>
+                <p>La Mona Lisa, también conocida como La Gioconda, es una obra pictórica del pintor renacentista italiano Leonardo da Vinci.</p>
+                <p><strong>Precio:</strong> $100,000</p>
+                <p><strong>Dimensiones:</strong> 77 cm x 53 cm (30 in x 21 in)</p>
+                <p><strong>Técnica:</strong> Pintura al óleo sobre tabla de álamo</p>
+                <p><strong>Año de creación:</strong> c. 1503-1506</p>
+                <!-- <button class="btn btn-primary action-button">Agregar al carrito</button> -->
+                <a href="file:///C:/Users/gatit/OneDrive/Desktop/Proyecto%20Pagina%20Web%20Casi%20Final/paginaCompra.html"><input type="button" value="Agregar al carrito"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container-fluid bg-dark p-5 mt-5">
+        <div class="row">
+            <div class="col">holi</div>
+        </div>
+    </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+</body>
+</html>

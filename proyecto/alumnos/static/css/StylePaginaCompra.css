@@ -1,0 +1,33 @@
+body{
+    background-color: antiquewhite;
+}
+
+.compra-cuadro{
+    background-color: #e4e2dd;
+    padding: 2%;
+    
+}
+.checkitem{
+    display: grid;
+    gap: 11px;
+    grid-template-columns: 39px 1fr;
+}
+
+ .container-content{
+    background-color: #e4e2dd;
+    border-color: rgb(37, 41, 41);
+}
+
+.texto-desc-cuadro{
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+.container-content-c1{
+    background-color: #e4e2dd;
+    border-color: rgb(6, 33, 33);
+    border-radius: 4px;
+    border-bottom: 10%;
+}
+

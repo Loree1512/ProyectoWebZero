@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizar compra</title>
+    {%load static%}
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/StylePaginaCompra.css' %}">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <script src="{% static 'js/miau.js' %}"></script>
+</head>
+
+<style>
+    .popover {
+    position: relative;
+    display: inline-block;
+    }
+    
+    .popover-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    }
+    
+    .popover:hover .popover-content {
+    display: block;
+    }
+    
+    </style>
+
+<body style="background-color: #e4e2dd;">
+
+     <!---MENU--->
+     <div id = "miNavbar"></div>   
+    <!-- ESPACIO -->
+    <div class="col" style="padding: 1%; text-decoration-color: #a09e9a;"> 
+        <p style="color: #e4e2dd;">a</p>
+    </div>
+    <!-- FIN ESPACIO -->
+<!-- PRODUCTOS -->
+<!-- DIV row div padre -->
+
+
+<div class="container">
+<div class="container-content">
+
+<div class="row"> 
+            <div class="col" style="border: 30px;">                       
+                        
+                            <!-- PRODUCTO 1 -->
+                            <div class="container-content" style="background-color: #d3d0c9; padding-right: 5%; border-radius: 30px; border-color: #a09e9a;">
+                                
+                                <div class="row" style="border: 30px; padding-bottom: 0.1%;">
+                                    <div class="col">
+                                        <div class="col" style="padding: 15%; text-decoration-color: #e4e2dd;"> 
+                                            <p style="color: #d3d0c9;">a</p>
+                                        </div>
+                                        <input type="checkbox" class="checkitem" style="width: 70%">
+                                    </div>
+                                    
+                                    <div class="col">
+                                    <h3 style="top: auto;  padding-top: 0.1%;">Leonardo Da Vinci - Monna Lisa</h3>                
+                                    <img src="{% static 'img/Leonardo_da_Vinci_-_Mona_Lisa.jpg' %}"  style="width: 50%; padding: 15px 5px; align-items: center;"> 
+                                    
+                                    <div class="col" style="padding: .1%; text-decoration-color: #a09e9a;"> 
+                                        <p style="color: #d3d0c9;">a</p>
+                                    </div>
+                                    </div>
+                                    
+                                    <div class="col">
+                                        <div class="col" style="padding: 15%; text-decoration-color: #a09e9a;"> 
+                                            <p style="color: #d3d0c9;">a</p>
+                                        </div>
+                                    <p class="texto-desc-cuadro" style="bottom: 60%;">Lorem ipsum dolor sit, amet consectetur adippturi!</p>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <br style="color: #e4e2dd;">
+            
+                            <!-- PRODUCTO 2 -->
+                            <div class="container-content" style="background-color: #d3d0c9; padding-right: 5%; border-radius: 30px; border-color: #a09e9a;">
+                                
+                                <div class="row" style="border: 30px;">
+                                    
+                                    <div class="col">
+                                        <div class="col" style="padding: 15%; text-decoration-color: #a09e9a;"> 
+                                            <p style="color: #d3d0c9;">a</p>
+                                        </div>
+                                        <input type="checkbox" class="checkitem" style="width: 70%">
+                                        
+                                    </div>
+                                    
+                                    <div class="col">
+                                        <h5 style="top: auto;  padding-top: 0.1%;">Claude Monet - Junge maedchen in einem</h5>                
+                                        <img src="{% static 'img/claude_monet_junge_maedchen_in_einem.jpg' %}"  style="width: 50%; padding: 15px 5px; align-items: center;"> 
+                                        
+                                        <div class="col" style="padding: .1%; text-decoration-color: #a09e9a;"> 
+                                            <p style="color: #d3d0c9;">a</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col">
+                                        <div class="col" style="padding: 12%; text-decoration-color: #a09e9a;"> 
+                                            <p style="color: #d3d0c9;">a</p>
+                                        </div>
+                                        <p class="texto-desc-cuadro" style="bottom: 70%;">Lorem ipsum dolor sit, amet consectetur adippturi!</p>
+                                    </div>
+                                </div>
+                            </div>
+
+            <br>
+    
+                            <!-- PRODUCTO 3 -->
+                            <div class="container-content" style="border-radius: 30px; background-color: #d3d0c9; padding-right: 5%; border-color: #a09e9a;">
+                                
+                                <div class="row" style="border: 30PX;">
+                                    
+                                    <div class="col">
+                                        <div class="col" style="padding: 12%; text-decoration-color: #a09e9a;"> 
+                                            <p style="color: #d3d0c9;">a</p>
+                                        </div>
+                                        <input type="checkbox" class="checkitem" style="width: 70%">
+                                    </div>
+                                    
+                                    <div class="col">
+                                        <h3 style="top: auto;  padding-top: 0.1%;">Claude Monet - El puente japonés</h3>                
+                                        <img src="{% static 'img/monet puente.jpg' %}"  style="width: 50%; padding: 15px 5px; align-items: center;"> 
+                                        
+                                        <div class="col" style="padding: .1%; text-decoration-color: #a09e9a;"> 
+                                            <p style="color: #d3d0c9;">a</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col">
+                                        <div class="col" style="padding: 12%; text-decoration-color: #a09e9a;"> 
+                                            <p style="color: #d3d0c9;">a</p>
+                                        </div>
+                                        <p class="texto-desc-cuadro" style="bottom: 70%;">Lorem ipsum dolor sit, amet consectetur adippturi!</p>
+                                        <div class="col" style="padding-right: 10%; text-decoration-color: #a09e9a;"> 
+                                            <p style="color: #d3d0c9;">a</p>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+            
+            </div> 
+            <!-- RESUMEN compra -->
+            <div class="col" style="background-color: #e4e2dd;">
+                
+                
+                <div class="col" style="padding: 1%; background-color: #e4e2dd;"> 
+                    <p style="color: #e4e2dd;">a</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col" style="padding-left: 18%;">
+                    <h3 style="top: auto;  padding-top: 0.1%;">Resumen de la compra:</h3> 
+                    
+                    <div class="col" style="background-color: #d3d0c9; padding: 12%; border-radius: 30PX;">
+                        <H5>Productos:                          $5,699.00</H5>
+                        <br>
+                        <hr>
+                        <H5>Descuento:                          $0.00</H5>
+                        <br>
+                        <hr>
+                        <H4>TOTAL:                              $5,699.00</H4>
+                        <br>
+                        <!-- <button >Finalizar compra</button> -->
+                        <a href="file:///C:/Users/gatit/OneDrive/Desktop/Proyecto%20Pagina%20Web%20Casi%20Final/index.html"><input type="button" value="Finalizar tu compra"></a>
+                    </div>
+                    
+                    </div>
+                </div>
+            
+            </div>
+
+</div>
+<br>
+<br>
+<br>
+            <!-- RELLENITO AL FINAL  -->
+            <div class="container-content">
+                <div class="row" style="background-color: #a09e9a;">
+                    
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates vitae, facere dolor, tempora culpa consequatur soluta, ullam totam repellendus dolorum sit temporibus id hic ipsum! Nemo nostrum rem quasi aperiam?</p>
+                
+                </div>
+            </div>
+    
+</body> 
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Obras de Arte</title>
+  {%load static%}
+  <link rel="stylesheet" type = "text/css" href="{% static 'css/style.css' %}">
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <script src="{% static 'js/miau.js' $}"></script>
+  <style>
+    
+    .popover {
+    position: relative;
+    display: inline-block;
+    }
+    
+    .popover-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    }
+    
+    .popover:hover .popover-content {
+    display: block;
+    }
+    
+   
+    .navbar {
+      background-color: #6a0dad;
+    }
+
+    .navbar-brand {
+      color: white;
+    }
+
+    .dropdown-menu {
+      background-color: white;
+    }
+
+    .product-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .action-button {
+      margin-top: 20px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .product-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #404040;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .product-info {
+      font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .container-main {
+      background-color: #f8f9fa;
+      padding: 50px 0;
+    }
+
+    .title {
+      color: #404040;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .cart-button a {
+      color: #fff;
+      background-color: #6a0dad;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+    }
+
+    .cart-button a:hover {
+      background-color: #491d7c;
+    }
+
+    .search-bar {
+      width: 400px;
+      margin-right: 20px;
+    }
+  </style>
+</head>
+<body style="background-color: #e4e2dd;">
+  <div id = "miNavbar"></div>
+
+  <div class="container-fluid container-main" style="background-color: #fff;">
+    <h1 class="title">Catálogo de Obras de Arte</h1>
+
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="product-card" onclick="window.location.href='producto.html'">
+          <h2 class="text-center">La Mona Lisa</h2>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/300px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" alt="La Mona Lisa" class="product-image">
+          <div class="product-info text-center">
+            <p>La Mona Lisa, también conocida como La Gioconda, es una obra pictórica del pintor renacentista italiano Leonardo da Vinci.</p>
+            <p>Precio: $100,000</p>
+          </div>
+          <button class="btn btn-primary action-button">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="product-card" onclick="window.location.href='producto.html'">
+          <h2 class="text-center">La Noche Estrellada</h2>
+          <img src="{% static 'img/Van_Gogh_-_Starry_Night.jpg' %}" alt="La Noche Estrellada" class="product-image">
+          <div class="product-info text-center">
+            <p>La Noche Estrellada es una famosa pintura del artista neerlandés Vincent van Gogh.</p>
+            <p>Precio: $150,000</p>
+          </div>
+          <button class="btn btn-primary action-button">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="product-card" onclick="window.location.href='producto.html'">
+          <h2 class="text-center">El Pensador</h2>
+          <img src="{% static 'img/The_Thinker,_Rodin.jpg' %}" alt="El Pensador" class="product-image">
+          <div class="product-info text-center">
+            <p>El Pensador es una famosa escultura del escultor francés Auguste Rodin, que representa a un hombre en profunda meditación.</p>
+            <p>Precio: $80,000</p>
+          </div>
+          <button class="btn btn-primary action-button">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <!--agregando otros tres productos-->
+
+      <div class="col-md-4">
+        <div class="product-card" onclick="window.location.href='producto.html'">
+          <h2 class="text-center">La persistencia de la memoria</h2>
+          <img src="{% static 'img/la-persistencia-de-la-memoria-salvador-dali.jpg' %}" alt="La persistencia de la memoria" class="product-image">
+          <div class="product-info text-center">
+            <p>La persistencia de la memoria es una famosa pintura surrealista del artista español Salvador Dalí.</p>
+            <p>Precio: $200,000</p>
+          </div>
+          <button class="btn btn-primary action-button">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="product-card" onclick="window.location.href='producto.html'">
+          <h2 class="text-center">El grito</h2>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/The_Scream.jpg/300px-The_Scream.jpg" alt="El grito" class="product-image">
+          <div class="product-info text-center">
+            <p>El grito es una famosa pintura del artista noruego Edvard Munch, que representa la angustia humana.</p>
+            <p>Precio: $120,000</p>
+          </div>
+          <button class="btn btn-primary action-button">Agregar al carrito</button>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="product-card" onclick="window.location.href='producto.html'">
+          <h2 class="text-center">El nacimiento de Venus</h2>
+          <img src="{% static 'img/Sandro_Botticelli_-_La_nascita_di_Venere.jpg' %}" alt="El nacimiento de Venus" class="product-image">
+          <div class="product-info text-center">
+            <p>El nacimiento de Venus es una famosa pintura del artista renacentista italiano Sandro Botticelli, que representa el nacimiento de la diosa Venus.</p>
+            <p>Precio: $180,000</p>
+          </div>
+          <button class="btn btn-primary action-button">Agregar al carrito</button>
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
+      <button class="btn btn-primary me-md-2" type="button" onclick="subir()">Subir</button>
+  </div>
+
+  <footer>
+    <div class="container-fluid bg-dark p-5 mt-5">
+        <div class="row">
+            <div class="col">holi</div>
+        </div>
+    </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  
+</body>
+</html>
