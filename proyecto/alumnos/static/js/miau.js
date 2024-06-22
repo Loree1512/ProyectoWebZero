@@ -6,8 +6,8 @@ function generarNavbar() {
                     <nav class="navbar navbar-expand-md" style="background-color: #e4e2dd;">
                         <div class="container-fluid">
                             <div class="container" style="width:100px;">
-                                <a class="navbar-brand" href="#">
-                                    <img src="{% static 'img/zero .png' %}" alt="Grupo Zero" width="80" height="50">
+                                <a class="navbar-brand" href="#">                            
+                                    <img src="/static/img/zero.png" alt="Grupo Zero" width="80" height="50"> 
                                 </a>
                             </div>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
