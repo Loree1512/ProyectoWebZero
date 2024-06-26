@@ -11,5 +11,8 @@ urlpatterns =[
     path ('producto', views.producto, name='producto'),
     path('listaArtista',views.lista_artista, name='listaArtista'),
     path('agregarArtista',views.agregarArtista, name='agregarArtista'),
+    path('artista_del/<str:pk>',views.artistas_del,name='artistas_del'),
+    path('artistas_findEdit/<str:pk>', views.artistas_findEdit, name='artistas_findEdit'),
+    path('artistasUpdate', views.artistasUpdate, name='artistasUpdate'),
 ]
 
