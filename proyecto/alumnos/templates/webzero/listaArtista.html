@@ -11,7 +11,7 @@
         <br>
 
         <button type = "button">
-            <a href="{% url agregarArtista %}">Agregar</a> 
+            <a href="{% url 'agregarArtista' %}">Agregar</a> 
         </button>
 
         <div id="idMensajes">
@@ -31,8 +31,8 @@
                         <td>{{}x.rut}</td>
                         <td>{{x.nombre}}</td>
                         <td>{{x.apellido_paterno}}</td>
-                        <td><a href="{% url 'artistas_del' pk=x.rut  %}">Eliminar</a></td>
-                        <td><a href="{% url 'artistas_findEdit' pk=x.rut %}">Modificar</a></td>
+                        <td><a href="#">Eliminar</a></td>
+                        <td><a href="#">Modificar</a></td>
                     </tr>
                 {% endfor %}
             {% endif %}

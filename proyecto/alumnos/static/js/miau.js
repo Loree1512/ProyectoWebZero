@@ -1,3 +1,4 @@
+
 function generarNavbar() {
     let navbar = `
         <div class="container-fluid">
