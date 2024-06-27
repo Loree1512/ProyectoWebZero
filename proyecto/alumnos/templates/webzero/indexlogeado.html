@@ -98,9 +98,9 @@
                                 <a href="{% url 'login' %}">Log In</a>
                               {% endif %}
                             </a>
-                            <ul class="dropdown-menu">
-                              <a class="dropdown-item" href="{% url 'index' %}">Cerrar sesión</a>
-                            </ul>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="{% url 'index' %}">Cerrar sesión</a></li>
+                            </div>
                           </li>
                           </ul>
                           
