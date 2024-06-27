@@ -90,6 +90,18 @@
                                   <li><a class="dropdown-item" href="#">Ver todo</a></li>
                               </ul>
                           </li>
+                          <li class="nav-item dropdown">
+                            <a class = "nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown-menu">
+                              {% if user.is_authenticated %}
+                                {{user.username}}
+                              {% else %}
+                                <a href="{% url 'login' %}">Log In</a>
+                              {% endif %}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a>
+                            </div>
+                          </li>
                           </ul>
                           
                           <!-- Formulario de inicio de sesion -->

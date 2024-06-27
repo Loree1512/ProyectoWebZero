@@ -126,7 +126,7 @@ def artistasUpdate (request):
     
 @login_required
 def menu(request):
-    request.session["usuario"]="@Lore_1512"
+    request.session["usuario"]=request.user.username
     usuario=request.session["usuario"]
     context= {'usuario':usuario}
     return render(request, 'webzero/index.html', context)
