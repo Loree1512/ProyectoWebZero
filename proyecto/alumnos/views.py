@@ -22,6 +22,9 @@ def perfilArtista(request):
 def producto(request):
     return render(request,"webzero/producto.html")
 
+def indexlogeado(request):
+    return render(request,"webzero/indexlogeado.html")
+
 def lista_artista(request):
     artistas= Artista.objects.all()
     context={"artistas":artistas}

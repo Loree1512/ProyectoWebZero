@@ -68,7 +68,7 @@ TEMPLATES = [
         },
     },
 ]
-LOGIN_REDIRECT_URL = "index"
+LOGIN_REDIRECT_URL = "indexlogeado"
 LOGOUT_REDIRECT_URL = "index"
 WSGI_APPLICATION = 'instituto.wsgi.application'
 
