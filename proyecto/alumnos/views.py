@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Artista,Genero
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -123,3 +124,9 @@ def artistasUpdate (request):
         context={'artistas': artistas}
         return render(request, 'webzero/listaArtista.html',context)
     
+@login_required
+def menu(request):
+    request.session["usuario"]="@Lore_1512"
+    usuario=request.session["usuario"]
+    context= {'usuario':usuario}
+    return render(request, 'webzero/index.html', context)
