@@ -117,7 +117,7 @@
               <nav class="navbar navbar-expand-md" style="background-color: #e4e2dd;">
                   <div class="container-fluid">
                       <div class="container" style="width:100px;">
-                          <a class="navbar-brand" href="#">
+                          <a class="navbar-brand" href="http://127.0.0.1:8000/">
                             <img src="/static/img/zero.png" alt="Grupo Zero" width="80" height="50">  
                             <!-- <img src= "{% static 'zero.png' %}" alt="Grupo Zero" width="80" height="50"> -->
                           </a>
@@ -131,7 +131,7 @@
                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                               <li class="nav-item">
                               </li>
-                              <a class="nav-link active" aria-current="page" href=" {% url 'catalogo' %} ">Inicio</a>
+                              <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/"></a>
                               <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                       aria-expanded="false">
@@ -180,19 +180,24 @@
                                                     
                                                    
                                                     <!-- Form con metodo post para enviar información -->
-                                                  <form method="post" class="formulario" id="formulario">
+                                                  <form class="formulario" id="formulario" novalidate>
+                                                    {% csrf_token %}
                                                       <!-- Agregamos titulo -->
-                                                          <h1>Inicio de sesion</h1>
+                                                          <h1>Inicio de sesión</h1>
                                                       
                                                       <!-- INICIO SESION: USUARIO -->
                                                           
                                                           <div class="formulario__usu-con " id="gp_username">
                                                               <label for="usuario" class="formulario__label">Nombre de usuario</label>
                                                               <div class="formulario_gp-input">
-                                                                  <input type="text" class="formulario_input" name="usuario" id="usuario" placeholder="Usuario">   
+                                                                  <input type="text" class="formulario_input" name="usuario" id="usuario" placeholder="Usuario" required>   
                                                                   <i class="formulario__validacion-estado bi bi-x-octagon"></i>
                                                                   
-                                                              </div>
+                                                              </div>   
+
+
+
+                                                              
                                                               <p class="formulario__input-error">Debe ser de 4 a 16 digitos y solamente letras, puntos y guion bajo.</p>
                                                           </div>
                                                       
@@ -200,7 +205,7 @@
                                                           <div class="formulario__usu-con " id="gp_contrasena">
                                                               <label for="contrasena" class="formulario__label">Contraseña</label>
                                                               <div class="formulario_gp-input">
-                                                                  <input type="password" class="formulario_input" name="contrasena" id="contrasena" >
+                                                                  <input type="password" class="formulario_input" name="contrasena" id="contrasena" placeholder="Contraseña" required>
                                                                   <i class="formulario__validacion-estado bi bi-x-octagon"></i>
                                                               </div>
                                                               <p class="formulario__input-error">Debe ser de 4 a 12 digitos.</p>
@@ -212,20 +217,23 @@
                                                           
                                                           </div>
                                                         
-                                                          <div class="recordar" style="padding-left: 25px; padding-top: 15px;">
-                                                              ¿Olvido su contraseña?
+                                                          <div class="recordar" style="padding-right: 25%; padding-top: 15px;">
+                                                            <a href="">¿Olvido su contraseña?</a>  
+                                                            
                                                           </div>
-                                                        
+                                                          <div class="registrarse" style="padding-left: 30%; padding-top: 1px; padding-right: 40%;">
+                                                              <a href="">Registrarse</a>
+                                                          </div>
+
                                                         <div class="formulario__iniciar formulario__btn-iniciar" style="padding: 10px;">
-                                                          <button type="submit" class="formulario__btn">Iniciar</button>
-                                                          <!-- <input type="submit" value="Iniciar"> -->
+                                                          <button type="submit" class="formulario__btn" >Iniciar</button>
+                                                          
+                                                         
                                                           
                                                         </div>
                                                         
                         
-                                                        <div class="registrarse" style="padding-left: 30%; padding-top: 15px;">
-                                                            <a href="">Registrarse</a>
-                                                        </div>
+                                                      
                                                   </form>
                                                 
                                                         <div class="btn-cerrar">
@@ -253,16 +261,17 @@
       
       <!--Carrito-->
       <div class="col-1">
-          <div class="popover" style="padding-top: 20%; background-color: #e4e2dd;">
-              <button class="popover-button"><i class="bi bi-cart" style="font-size: 25px;"></i></button>
+          <div class="popover" style="padding-top: 20%; background-color: #e4e2dd;" >
+              <button class="popover-button" ><i class="bi bi-cart" style="font-size: 25px;"></i></button>
               <div class="popover-content">
               Ningun producto seleccionado...
+              <a href="http://127.0.0.1:8000/ver_carrito">Ir al carrito</a>
               </div>
           </div>
         </div>
   </div>
   
-    </div>
+</div>
     
     <!-- Fin Navbar -->
 

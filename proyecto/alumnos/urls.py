@@ -14,5 +14,8 @@ urlpatterns =[
     path('artista_del/<str:pk>',views.artistas_del,name='artistas_del'),
     path('artistas_findEdit/<str:pk>', views.artistas_findEdit, name='artistas_findEdit'),
     path('artistasUpdate', views.artistasUpdate, name='artistasUpdate'),
+    path ('agregar/<int:producto_id>/', views.agregar_al_carrito, name='agregar_al_carrito'), #URL pa agregar unprod al carrito
+    path ('ver_carrito', views.ver_carrito, name ='ver_carrito'), #URL pa ver el contenido del carro
+
 ]
 

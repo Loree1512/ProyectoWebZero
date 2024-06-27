@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Artista,Genero
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Artista,Genero,ProductoC, Carrito, ItemCarrito
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -130,3 +130,43 @@ def menu(request):
     usuario=request.session["usuario"]
     context= {'usuario':usuario}
     return render(request, 'webzero/index.html', context)
+
+# las vistas para agregar un producto al carrito.
+
+def agregar_al_carrito(request, productoC_id):
+    
+    productoC = get_object_or_404(ProductoC, id=productoC_id) #obtiene el producto o retorna 404 si no existe
+    carrito_id= request.session.get('carrito_id') #obtiene id del carro de la sesion.
+
+    if carrito_id:
+        carrito = Carrito.objects.get(id=carrito_id) #obtiene carrito existente
+    else:
+        carrito = Carrito.objects.create() #crea carrito nuevo si no existe
+        request.session['carrito_id'] = carrito.id #guarda la id del nuevo carrito en la sesion
+    
+    item, created = ItemCarrito.objects.get_or_create(carrito=carrito, productoC=productoC)
+    if not created:
+        item.cantidad += 1 #incrementa la cantidad si el item ya existia
+        item.save() #guarda el item actualizado
+
+    return redirect('ver_carrito') #Redirige a la vista del carrito
+
+#Vista para mostrar el contenido del carrito
+
+def ver_carrito(request):
+    carrito_id = request.session.get('carrito_id') # obtiene el id del carrito de la sesion
+    if carrito_id: 
+        carrito = Carrito.objects.get(id=carrito_id) 
+        items = carrito.items.all() 
+        total = 0 
+        for item in items: 
+            item.total_por_linea = item.cantidad * item.producto.precio 
+            total += item.total_por_linea
+    else:
+        carrito = None #no hay carrito si el id no esta en la sesion
+        items = []
+        total = 0
+
+    return render(request, 'webzero/ver_carrito.html', {'carrito': carrito, 'items': items, 'total': total}) #renderiza la plantilla con el carrito
+
+
